@@ -1,6 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
-#include "fparse.h"
+#include "fparser.h"
 
 TEST_CASE("FParser"){
     std::string func_for_test="x";
