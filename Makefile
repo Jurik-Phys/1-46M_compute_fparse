@@ -1,7 +1,7 @@
-EXEC=fparse
+EXEC=fparser
 EXEC_T=t_$(EXEC)
-OBJ=fparse.o main.o
-OBJ_T=fparse.o test.o 
+OBJ=fparser.o main.o
+OBJ_T=fparser.o test.o 
 
 main:$(OBJ)
 	@echo 'Сборка исполняемого файла'
@@ -9,9 +9,9 @@ main:$(OBJ)
 main.o: main.c++ 
 	@echo "Компиляция main.c++"
 	c++ -Wall -c main.c++ 
-fparse.o: fparse.c++
-	@echo "Компиляция fparse.c++"
-	c++ -Wall -c fparse.c++
+fparser.o: fparser.c++
+	@echo "Компиляция fparser.c++"
+	c++ -Wall -c fparser.c++
 clean:
 	@echo "Удаление объектных файлов"
 	rm -f *.o

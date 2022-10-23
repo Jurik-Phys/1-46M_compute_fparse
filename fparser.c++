@@ -1,4 +1,4 @@
-// Начало файла parse.с++
+// Начало файла parser.с++
 
 // По материалам статей
 // "Парсер формул с помощью метода рекурсивного спуска"
@@ -9,7 +9,7 @@
 #include <iostream>
 #include <cstring>
 #include <cmath>
-#include "fparse.h"
+#include "fparser.h"
 
 // Приоритеты математический операций
 //  - Функции и переменные; (cos(x), sin(x), tan(x), exp(x))
