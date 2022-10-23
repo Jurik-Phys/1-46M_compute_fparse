@@ -33,3 +33,21 @@ TEST_CASE("FParser"){
     CHECK(parser.parse(func_for_test) - 2 < 0.00001);
 }
 
+TEST_CASE("FParser V2_1 <x>=1"){
+    std::string func_for_test="(x + x*x - x*x*x - 1)/(1 + x*x)";
+    FParser parser(1);
+    CHECK(parser.parse(func_for_test) - 0 < 0.00001);
+}
+
+TEST_CASE("FParser V2_1 <x>=2"){
+    std::string func_for_test="(x + x*x - x*x*x - 1)/(1 + x*x)";
+    FParser parser(1);
+    CHECK(parser.parse(func_for_test) + 1 < 0.00001);
+}
+
+TEST_CASE("FParser V2_2 <x>=3.14/4"){
+    std::string func_for_test="cos(x)*cos(x)*cos(x)*sin(2*x)";
+    FParser parser(3.14/4);
+    CHECK(parser.parse(func_for_test) - 0.3535534 < 0.00001);
+}
+
