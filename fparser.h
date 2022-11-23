@@ -38,6 +38,8 @@ class FParser {
     
         // Переменная в терминах математического выражения
         double x;
+        double y;
+        double z;
 
         bool is_digits(const char& str);
         Result calc_function(const std::string&, Result);
@@ -49,7 +51,8 @@ class FParser {
         std::string process_string(const std::string&);
 
     public:
-        FParser(const double&);;
+        FParser(const double&);
+        FParser(const double&, const double&, const double&);
         ~FParser() {};
         double parse(std::string&);
 };

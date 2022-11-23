@@ -75,18 +75,33 @@ Result FParser::parse_number(const std::string& s){
     // std::cout << "NUM(s): " << s << "\n";
     // std::cout << "NUM: s[0]: " << s[0] << "\n";
 
-    if ( s[0] == std::string("x")[0] ){
+    if (( s[0] == std::string("x")[0] ) || ( s[0] == std::string("y")[0] ) || ( s[0] == std::string("z")[0] )){
         i = 1;
-        parsed_number = x;
-        // Debug
-        // std::cout << "x = " << parsed_number << "\n";
+        
+        if ( (s[0]) == std::string("x")[0] ) {
+            parsed_number = x;
+            // Debug
+            // std::cout << "x = " << parsed_number << "\n";
+        }
+
+        if ( (s[0]) == std::string("y")[0] ) {
+            parsed_number = y;
+            // Debug
+            // std::cout << "y = " << parsed_number << "\n";
+        }
+
+        if ( (s[0]) == std::string("z")[0] ) {
+            parsed_number = z;
+            // Debug
+            // std::cout << "z = " << parsed_number << "\n";
+        }
         
         rest_string   = s.substr(i, s.length() - i );
 
         num_result.acc  = parsed_number;
         num_result.rest = rest_string;
     }
-
+        
     else{
         // Определение количества символов в разбираемом числе или переменной "x" 
         for ( std::string::const_iterator ptr = s.begin(); ptr < s.end(); ptr++){
@@ -319,6 +334,11 @@ std::string FParser::process_string(const std::string& s){
 
 // Constructor 
 FParser::FParser(const double& input_x) { x = input_x; };
+FParser::FParser(const double& input_x, const double& input_y, const double& input_z) {
+    x = input_x;
+    y = input_y;
+    z = input_z;
+};
     
 double FParser::parse(std::string& s){
     s = process_string(s);
